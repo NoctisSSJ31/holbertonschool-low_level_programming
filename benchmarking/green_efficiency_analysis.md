@@ -1,36 +1,53 @@
 # Green Efficiency & Benchmarking Analysis
 
-
 ## Measurement Methodology
 
-Pour évaluer l'éfficacité énergétique du lel et comprendre le comportement pendant l'exécution, des tests ont été menés dans un environnement isolé et sécurisé en langage C. 
-Les programmes ont été compilés selon le protle strict suivant: (gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long), afin de respecter les normes imposées. 
-Les temps d'exécutions ont été relevdu�sa l'aide de la bibliothèque standard '<time.h>' ainsi que de la fonction 'clock()' en entrant les variables.
-Les cycles d'horloge du processeur qui ont été mesurés, ont été ensuite convertis en seconde par la fonction 'clock_per_sec'(une constante système).
-L'opération a été rép�a plusieurs reprises afin de relever des données comparatives fiables entre les temps d'exécutions.
+Pour�evaluer l'efficacite energetique du logiciel et comprendre le comportement pendant l'execution, des tests ont ete menes dans un environnement isole et securise en langage C. 
+ 
+Les programmes ont ete compiles selon le protocole strict suivant :
+
+```bash
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long
+
+afin de respecter les normes imposees.
+
+Les temps d'execution ont ete releves a l'aide de la bibliotheque standard <time.h> ainsi que de la fonction clock().
+
+Les cycles d'horloge du processeur mesures ont ensuite ete convertis en secondes par la fonction CLOCKS_PER_SEC (une constante systeme).
+
+L'operation a ete repete a plusieurs reprises afin de relever des donnees comparatives fiables entre les temps d'execution.
 
 ## Observed Performance Differences
 
-Les comparaisons algorithmiques et les journaux d'instrumentation (mesures de temps), ont révélé des écarts en termes d'éfficacité.
-Dans le test comparant l'approche naïve et l'implémentation " single-pass", l'écart de performance s'est avéré considérable.
-l'implémentation naïve s'exécutait en plusieurs secondes  a des boucles imbriquées. tandis que l'exécution de l'implémentation "single-pass" était quasiment instantané.
-Par ailleurs, l'instrumentation du traitement de données a montré que les ressources processeur étaient très peu élevées, et que les mesures répétées ont montré des temps d'exécution stables.
+Les comparaisons algorithmiques et les journaux d'instrumentation (mesures de temps) ont revele des ecarts en termes d'efficacite.
+
+Dans le test comparant l'approche naive et l'implementation single-pass, l'ecart de performance s'est avere considerable.
+
+L'implementation naive s'executait en plusieurs secondes, dues a des boucles imbriquees, tandis que l'execution de l'implementation single-pass etait quasiment instantanee.
+
+Par ailleurs, l'instrumentation du traitement des donnees a montre que les ressources processeur mobilisees etaient tres faibles, et que les mesures repetees affichaient des temps d'execution stables.
 
 ## Relation Between Runtime and Energy Consumption
 
-le temps d'exécution dans cet environnement isolé constitue un indicateur fiable de consommation d'énergie.
-Lorsqu'un programme utilise du code non efficace, non optimisé, cela se traduit par une durée du processus très longue et donc une utilisation conséquente rallongée du processeur. 
-Par conséquent, un temps d'exécution plus long se traduit directement par une consommation énergéti.
-L'optimisation des algorithmes diminue le nombre de cycles actifs du processeur, ce qui réduit directement l'empreinte énergétique.
+Le temps d'execution dans cet environnement isole constitue un indicateur fiable de la consommation d'energie.
+
+Lorsqu'un programme utilise du code non optimise, cela se traduit par une duree de processus tres longue et, par consequent, une utilisation prolongee et consequente du processeur.
+
+Un temps d'execution plus long entraine donc directement une consommation energetique cumulee accrue a grande echelle.
+
+L'optimisation des algorithmes diminue le nombre de cycles actifs du processeur, ce qui reduit directement l'empreinte energetique.
 
 ## Limitations of the Experiment
 
-Bien que les résultats montret en évidence une divergence de performance, les mesures ont été effectuées et relevées sur un poste local. 
-Ce qui ne constitue pas un environnement réel en condition d'entreprise avec une grosse producton et les charges de travail imposées
+Bien que les resultats mettent en�evidence une divergence de performance, les mesures ont ete effectuees et relevees sur un poste local.
 
+Cela ne constitue pas un reel environnement de production en condition d'entreprise soumis a de lourdes charges de travail.
 
 ## Practical Engineering Takeaway
 
-La leçon principale de cet atelier de test comparatif entre l'optimisation algorithmique et les choix d'efficacité, montre que l'application de tout ceci ont un impact écologique et financier considérable.
-ecrire un code efficace est une responsabilité fondamentale pour un développement durable des technologies vertes.
-En minimisant les activités du processeur, cela contribu a  diminer grandement l'empreinte énergétique.
+La lecon principale de cet atelier de test comparatif entre l'optimisation algorithmique et les choix d'efficacites montre que ces manipulations  ont un impact ecologique et financier considerable.
+
+Ecrire un code efficace est une responsabilite fondamentale pour le developpement durable des technologies vertes.
+
+En minimisant l'activite du processeur, on contribue a diminuer grandement l'empreinte energetique.
