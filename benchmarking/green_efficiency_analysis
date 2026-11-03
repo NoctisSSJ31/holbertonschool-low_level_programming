@@ -2,13 +2,13 @@
 
 ## Measurement Methodology
 
-Pour√evaluer l'efficacite energetique du logiciel et comprendre le comportement pendant l'execution, des tests ont ete menes dans un environnement isole et securise en langage C. 
- 
+Pour evaluer l'efficacite energetique du logiciel et comprendre le comportement pendant l'execution, des tests ont ete menes dans un environnement isole et securise en langage C.
+
 Les programmes ont ete compiles selon le protocole strict suivant :
 
-```bash
-
+bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-long-long
+
 
 afin de respecter les normes imposees.
 
@@ -40,13 +40,13 @@ L'optimisation des algorithmes diminue le nombre de cycles actifs du processeur,
 
 ## Limitations of the Experiment
 
-Bien que les resultats mettent en√evidence une divergence de performance, les mesures ont ete effectuees et relevees sur un poste local.
+Bien que les resultats mettent en evidence une divergence de performance, les mesures ont ete effectuees et relevees sur un poste local.
 
 Cela ne constitue pas un reel environnement de production en condition d'entreprise soumis a de lourdes charges de travail.
 
 ## Practical Engineering Takeaway
 
-La lecon principale de cet atelier de test comparatif entre l'optimisation algorithmique et les choix d'efficacites montre que ces manipulations  ont un impact ecologique et financier considerable.
+La lecon principale de cet atelier de test comparatif entre l'optimisation algorithmique et les choix d'efficacites montre que ces manipulations ont un impact ecologique et financier considerable.
 
 Ecrire un code efficace est une responsabilite fondamentale pour le developpement durable des technologies vertes.
 
