@@ -2,6 +2,34 @@
 #include <stdlib.h>
 
 /**
+ * _strdup - Returns a pointer to a newly allocated space in memory,
+ *           containing a copy of the string given as a parameter.
+ * @str: The string to duplicate
+ *
+ * Return: Pointer to the duplicated string, or NULL if it fails
+ */
+char *_strdup(char *str)
+{
+	char *dup;
+	int i, len = 0;
+
+	if (str == NULL)
+		return (NULL);
+
+	while (str[len])
+		len++;
+
+	dup = malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+		return (NULL);
+
+	for (i = 0; i <= len; i++)
+		dup[i] = str[i];
+
+	return (dup);
+}
+
+/**
  * new_dog - Creates a new dog
  * @name: The dog's name
  * @age: The dog's age
@@ -12,8 +40,6 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *d;
-	int i, len_name = 0, len_owner = 0;
-	char *n, *o;
 
 	if (name == NULL || owner == NULL)
 		return (NULL);
@@ -22,34 +48,22 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (d == NULL)
 		return (NULL);
 
-	while (name[len_name])
-		len_name++;
-	while (owner[len_owner])
-		len_owner++;
-
-	n = malloc(sizeof(char) * (len_name + 1));
-	if (n == NULL)
+	d->name = _strdup(name);
+	if (d->name == NULL)
 	{
 		free(d);
 		return (NULL);
 	}
 
-	o = malloc(sizeof(char) * (len_owner + 1));
-	if (o == NULL)
+	d->owner = _strdup(owner);
+	if (d->owner == NULL)
 	{
-		free(n);
+		free(d->name);
 		free(d);
 		return (NULL);
 	}
 
-	for (i = 0; i <= len_name; i++)
-		n[i] = name[i];
-	for (i = 0; i <= len_owner; i++)
-		o[i] = owner[i];
-
-	d->name = n;
 	d->age = age;
-	d->owner = o;
 
 	return (d);
 }
