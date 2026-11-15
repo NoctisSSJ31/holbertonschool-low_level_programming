@@ -1,13 +1,14 @@
 #include <stdio.h>
 
 /**
- * main - Simple calculator with multiplication implementation
+ * main - Simple calculator with safe division implementation
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	int choice, a, b;
+	int choice;
+	float a, b;
 
 	while (1)
 	{
@@ -29,30 +30,37 @@ int main(void)
 		else if (choice == 1)
 		{
 			printf("A: ");
-			scanf("%d", &a);
+			scanf("%f", &a);
 			printf("B: ");
-			scanf("%d", &b);
-			printf("Result: %d\n", a + b);
+			scanf("%f", &b);
+			printf("Result: %.0f\n", a + b);
 		}
 		else if (choice == 2)
 		{
 			printf("A: ");
-			scanf("%d", &a);
+			scanf("%f", &a);
 			printf("B: ");
-			scanf("%d", &b);
-			printf("Result: %d\n", a - b);
+			scanf("%f", &b);
+			printf("Result: %.0f\n", a - b);
 		}
 		else if (choice == 3)
 		{
 			printf("A: ");
-			scanf("%d", &a);
+			scanf("%f", &a);
 			printf("B: ");
-			scanf("%d", &b);
-			printf("Result: %d\n", a * b);
+			scanf("%f", &b);
+			printf("Result: %.0f\n", a * b);
 		}
 		else if (choice == 4)
 		{
-			/* La division viendra ensuite */
+			printf("A: ");
+			scanf("%f", &a);
+			printf("B: ");
+			scanf("%f", &b);
+			if (b == 0)
+				printf("Error: division by zero\n");
+			else
+				printf("Result: %g\n", a / b);
 		}
 		else
 		{
